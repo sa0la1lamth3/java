@@ -4,20 +4,32 @@ import lesson7.lesson73.SmartPhone;
 import lesson7.lesson73.Store;
 
 public class StoreManagement {
+
     private Store[] stores;
 
-    private enum PHONE_TYPE {
+    public static enum PHONE_TYPE {
         BLUETOOTH,
         _5G,
         WIFI,
-        ALL
+        All
+    }
+
+    public StoreManagement() {
     }
 
     public StoreManagement(Store[] stores) {
         this.stores = stores;
     }
+    
+    public Store[] getStores() {
+        return stores;
+    }
 
-    public int countPhoneByType( PHONE_TYPE phone_type) {
+    public void setStores(Store[] stores) {
+        this.stores = stores;
+    }
+
+    public int countPhoneByType(PHONE_TYPE phone_type) {
         int count = 0;
         for (Store store : stores) {
             for (SmartPhone smartPhone : store.getPhones()) {
@@ -44,6 +56,8 @@ public class StoreManagement {
         }
         return count;
     }
+
+
 
     public Store getBestSellermaxmin(boolean getMax) {
         Store result = stores[0];

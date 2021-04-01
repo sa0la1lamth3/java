@@ -51,7 +51,7 @@ public class AppTest {
         System.out.println("Số lượng điện thoại có bluetooth : " + storeManagement.countPhoneByType(StoreManagement.PHONE_TYPE.BLUETOOTH));
 
         // số lượng điện thoại có WIFI...
-        System.out.println("Số lượng điện thoại có bluetooth : " + storeManagement.countPhoneByType(StoreManagement.PHONE_TYPE.WIFI));
+        System.out.println("Số lượng điện thoại có Wifi : " + storeManagement.countPhoneByType(StoreManagement.PHONE_TYPE.WIFI));
 
 
 

@@ -13,6 +13,8 @@ public class Store {
         this.phones = phones;
     }
 
+    public Store() {
+    }
 
     public String getName() {
         return name;
