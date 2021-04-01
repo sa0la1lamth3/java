@@ -11,8 +11,7 @@ public abstract class Employee {
         this.isFullTime = isFullTime;
     }
 
-    public long salary (){
-        return 0;
+    public Employee() {
     }
 
     public String getName() {

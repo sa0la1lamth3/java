@@ -8,6 +8,9 @@ public class OverTimeEmployee extends Employee {
         this.workHourNumber = workHourNumber;
     }
 
+    public OverTimeEmployee() {
+    }
+
     public int getWorkHourNumber() {
         return workHourNumber;
     }
@@ -16,13 +19,13 @@ public class OverTimeEmployee extends Employee {
         this.workHourNumber = workHourNumber;
     }
 
-    @java.lang.Override
-    public long salary() {
-        long salary = workHourNumber * 100000;
-        return salary;
+    public float basicSalary() {
+        float basicSalary =0;
+        basicSalary = workHourNumber * 0.1f;
+        return basicSalary;
     }
 
-    @java.lang.Override
+    @Override
     public String toString() {
         return "OverTimeEmployee{" +
                 "workHourNumber=" + workHourNumber +

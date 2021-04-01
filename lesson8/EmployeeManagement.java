@@ -1,5 +1,6 @@
 package lesson8;
 
+import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -22,32 +23,27 @@ public class EmployeeManagement {
         Employee[] employees = new Employee[10];
         Random random = new Random();
         for (int i = 0; i < employees.length; i++) {
-            boolean isFullTime = random.nextBoolean();
             String name = "Employee_" + i;
             int age = 18 + random.nextInt(50);
+            boolean isFullTime = random.nextBoolean();
+
 
             if (isFullTime) {
-                long baseSalyry = random.nextLong();
-                boolean level = random.nextBoolean();
+                float baseSalary = random.nextFloat();
+                boolean level = random.nextBoolean();//Sep or linh
                 int overTimeDay = random.nextInt(30);
-                Employee fulltimeEmployee = new FullTimeEmployee("Nhân viên_" + i, 23, true,
-                        20000000, true, 4);
+                Employee fulltimeEmployee = new FullTimeEmployee(name,age,isFullTime,baseSalary,level,overTimeDay);
                 employees[i] = fulltimeEmployee;
             } else {
                 int workHourNumber = random.nextInt();
-                Employee overtimeEmployee = new OverTimeEmployee("Nhân viên_" + i, 34, false, 8);
+                Employee overtimeEmployee = new OverTimeEmployee(name,age,isFullTime,workHourNumber);
                 employees[i] = overtimeEmployee;
             }
 
         }
-
-    }
-
-    public void allEmployee(){
-        for (Employee employee:employees){
+        for (Employee employee : employees) {
             System.out.println(employee.toString());
         }
     }
-
 
 }

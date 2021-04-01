@@ -1,22 +1,25 @@
 package lesson8;
 
 public class FullTimeEmployee extends Employee {
-    protected long basicSalary;
+    protected float basicSalary;
     protected boolean level;
     protected int overTimeDay;
 
-    public FullTimeEmployee(String name, int age, boolean isFullTime, long basicSalary, boolean level, int overTimeDay) {
+    public FullTimeEmployee(String name, int age, boolean isFullTime, float basicSalary, boolean level, int overTimeDay) {
         super(name, age, isFullTime);
         this.basicSalary = basicSalary;
         this.level = level;
         this.overTimeDay = overTimeDay;
     }
 
-    public long getBasicSalary() {
+    public FullTimeEmployee() {
+    }
+
+    public float getBasicSalary() {
         return basicSalary;
     }
 
-    public void setBasicSalary(long basicSalary) {
+    public void setBasicSalary(float basicSalary) {
         this.basicSalary = basicSalary;
     }
 
@@ -36,19 +39,18 @@ public class FullTimeEmployee extends Employee {
         this.overTimeDay = overTimeDay;
     }
 
-    @java.lang.Override
-    public long salary() {
-        long salary = 0;
+    public float basicSalary() {
+        float salary = 0;
         if (level){
-            salary = 20000000;
+            salary = 20f;
         } else {
-            salary = 10000000;
+            salary = 10f;
         }
-        salary = salary + overTimeDay * 800000;
+        salary = salary + overTimeDay * 0.8f;
         return salary;
     }
 
-    @java.lang.Override
+    @Override
     public String toString() {
         return "FullTimeEmployee{" +
                 "basicSalary=" + basicSalary +
