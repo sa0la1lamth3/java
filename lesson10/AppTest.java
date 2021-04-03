@@ -22,9 +22,10 @@ public class AppTest {
 
 
         // tìm nhân viên theo ID ;
+        Scanner scanner1 = new Scanner(System.in);
         System.out.println("Nhập ID của nhân viên cần tìm");
-        String cmt = scanner.nextLine();
-        Employee employee = employeeManagement.getById(cmt);
+        String id = scanner1.nextLine();
+        Employee employee = employeeManagement.getById(id);
         System.out.println(employee.toString());
 
     }

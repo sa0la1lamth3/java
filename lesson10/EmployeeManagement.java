@@ -5,7 +5,7 @@ import java.util.*;
 public class EmployeeManagement {
     private int n;
     private ArrayList<Employee> employees = new ArrayList<Employee>();
-    private Map<String, Employee> myMap = new HashMap<String, Employee>();
+    private HashMap<String, Employee> myMap = new HashMap<String, Employee>();
 
 
     public EmployeeManagement(int n) {
@@ -15,20 +15,20 @@ public class EmployeeManagement {
         for (int i = 0; i < n; i++) {
             String name = "Employee_" + i;
             int age = 18 + random.nextInt(50);
-            String id = "ID_" +i;
+            String id = "ID" +i;
             boolean a = random.nextBoolean();
             if (a) {
                 int totalWorkingDays = random.nextInt(30);
                 long dailySalary = random.nextInt(4000000);
                 FulltimeEmployee fulltimeEmployee = new FulltimeEmployee(name, age,id, totalWorkingDays, dailySalary);
                 employees.add(fulltimeEmployee);
-                myMap.put("Employee_" + i, fulltimeEmployee);
+                myMap.put(id, fulltimeEmployee);
             } else {
                 int totalWorkingShift = random.nextInt(30);
                 long baseSalary = random.nextInt(2000000);
                 ParttimeEmployee parttimeEmployee = new ParttimeEmployee(name, age, id, totalWorkingShift, baseSalary);
                 employees.add(parttimeEmployee);
-                myMap.put("Employee_" + i, parttimeEmployee);
+                myMap.put(id, parttimeEmployee);
 
             }
         }
